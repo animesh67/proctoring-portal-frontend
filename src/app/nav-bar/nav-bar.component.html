@@ -1,0 +1,45 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport role='navigation' [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+        <mat-toolbar style="color: rgb(72, 140, 179);"><b>Virtual <br>Invigilation   </b><img class="img" src="favicon.png"> </mat-toolbar>
+        <mat-nav-list>
+            <a *ngIf="!isLogged" mat-list-item routerLink="/login " routerLinkActive="active ">
+                <p>Login</p>
+            </a>
+            <a *ngIf="isAdmin " mat-list-item routerLink="/add-teacher" routerLinkActive="active ">
+                <p>Add Users</p>
+            </a>
+            <a *ngIf="isLogged " mat-list-item routerLink="/profile" routerLinkActive="active ">
+                <p>Profile</p>
+            </a>
+            <a *ngIf="isLogged " mat-list-item routerLink="quiz/upcoming-quiz" routerLinkActive="active ">
+                <p>Upcoming Quizzes</p>
+            </a>
+            <a *ngIf="isLogged " mat-list-item routerLink="quiz/past-quiz" routerLinkActive="active ">
+                <p>Past Quizzes</p>
+            </a>
+            <a *ngIf="isTeacher " mat-list-item routerLink="/quiz-upload" routerLinkActive="active ">
+                <p>Quiz-Upload</p>
+            </a>
+            <a *ngIf="isTeacher " mat-list-item routerLink="/quiz/result" routerLinkActive="active ">
+                <p>Quiz-Results</p>
+            </a>
+            <a *ngIf="isTeacher || isAdmin " mat-list-item routerLink="/students" routerLinkActive="active ">
+                <p>Students Enrolled</p>
+            </a>
+            <a *ngIf="isLogged && !isAdmin " mat-list-item routerLink="/live-proctoring" routerLinkActive="active ">
+                <p>Live Proctoring</p>
+            </a>
+            <a *ngIf="true " mat-list-item routerLink="/works" routerLinkActive="active">
+                <p>How It Works?</p>
+            </a>
+            <a *ngIf="isLogged" mat-list-item (click)="logOut() ">
+                <p>Logout</p>
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <div class="l ">
+        <br>
+        <router-outlet></router-outlet>
+    </div>
+
+</mat-sidenav-container>

@@ -1,0 +1,87 @@
+.center {
+    text-align: center;
+}
+
+.dk {
+    width: 72%;
+    margin-left: 14%;
+    margin-right: 14%;
+    background-color: white;
+    padding-top: 2px;
+    padding-bottom: 2%;
+    border-radius: 5px;
+    min-height: 94vh;
+}
+
+.margin {
+    margin-right: 40px;
+    margin-top: 20px;
+    width: 200px !important;
+}
+
+.smallWidth {
+    width: 300px;
+}
+
+.wd {
+    width: 60%;
+}
+
+.mat-form-field+.mat-form-field {
+    margin-left: 8px;
+}
+
+.add {
+    font-size: medium;
+}
+
+.padding {
+    margin-top: 20px;
+}
+
+.ques {
+    margin: 2px;
+    border: rgb(155, 155, 161);
+    border-radius: 2px;
+    border-style: dotted;
+    size: 50px;
+}
+
+.q {
+    font-size: 18px;
+    margin: 2px;
+    size: 100;
+}
+
+.m {
+    margin-left: 12%;
+    margin-right: 12%;
+}
+
+.i {
+    font-size: 16px;
+    size: 50;
+    color: black;
+}
+
+.op {
+    margin-left: 9px;
+    margin-right: 9px;
+    width: 600px !important;
+}
+
+::ng-deep .mat-input-wrapper {
+    width: 400px !important;
+}
+
+.orange {
+    color: rgb(72, 140, 179);
+}
+
+.black {
+    color: black;
+}
+
+.left {
+    text-align: left;
+}

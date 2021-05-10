@@ -1,0 +1,66 @@
+.form {
+    text-align: center;
+}
+
+.q {
+    margin-left: 18%;
+    margin-right: 18%;
+    background-color: white;
+    border-radius: 15px;
+    border-left-style: solid;
+    border-color: rgb(212, 138, 0);
+    border-width: 7px;
+}
+
+.ques {
+    padding-left: 2.5%;
+    padding-top: 2%;
+    padding-bottom: 0%;
+    text-align: left;
+    font-size: 18px;
+}
+
+.example-radio-group {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+    padding-bottom: 2%;
+}
+
+.example-radio-button {
+    padding-left: 2.5%;
+    padding-bottom: 1.5%;
+    padding-top: 0.7%;
+    font-size: 15px;
+}
+
+.op {
+    word-wrap: break-word;
+}
+
+.button {
+    background-color: rgb(212, 138, 0);
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+}
+
+.button:hover {
+    cursor: pointer;
+    color: rgb(212, 138, 0);
+    background-color: white;
+}
+
+.oo {
+    border-top-style: solid;
+    border-left-style: none;
+    padding-top: 15px;
+    font-size: 35px;
+    padding-bottom: 15px;
+    padding-left: 1.5%;
+}

@@ -1,0 +1,45 @@
+<br>
+<div style="justify-content: center;">
+    <div style="text-align: center;">
+        <mat-form-field class="small">
+            <mat-label style="color: orange; font-size: 18px;">Select Subject Name</mat-label>
+            <mat-select [(ngModel)]="subjectName" name="Subject" style="color: white;">
+                <mat-option class="op" *ngFor="let s of subjects" [value]="s">
+                    {{s}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field><br>
+        <button class="button" (click)="onRefresh()">Submit</button><br><br>
+
+        <mat-form-field class="search-form-field" floatLabel="never" *ngIf="students!=null">
+            <input matInput [(ngModel)]="searchKey" name="search" (keyup)="applyFilter()" placeholder="Search" autocomplete="off" style="background-color: white;color: black;">
+            <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="searchKey" (click)="onSearchClick()">
+            <mat-icon style="color: orange;">close</mat-icon>
+          </button>
+        </mat-form-field>
+        <br>
+    </div>
+
+    <table *ngIf="refresh" mat-table [dataSource]="students" class="mat-elevation-z8">
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> name </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef> email </th>
+            <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> id </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>

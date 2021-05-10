@@ -1,0 +1,10 @@
+.btnn {
+    background-color: rgb(72, 140, 179);
+    font-size: 17px;
+    color: white;
+    padding: 2% 5% 2% 5%;
+}
+
+.btnn:hover {
+    cursor: pointer;
+}

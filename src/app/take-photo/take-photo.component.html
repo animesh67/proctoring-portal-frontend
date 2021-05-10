@@ -1,0 +1,9 @@
+<div id="app">
+    <div>
+        <video style="padding: 1% 1% 1% 1%; border-radius: 4%; background-color: white;" #video id="video" width="640" height="480" autoplay></video>
+    </div>
+    <button *ngIf="s" id="snap" (click)="capture()">Snap Photo</button>
+    <button *ngIf="!s" (click)="upload()">Upload</button>
+    <button (click)="retry()">Retry</button>
+    <canvas #canvas id="canvas" width="640" height="480"></canvas>
+</div>

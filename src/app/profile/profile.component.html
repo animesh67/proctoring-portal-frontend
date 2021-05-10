@@ -1,0 +1,35 @@
+<p class="sp">PROFILE</p>
+
+<div class="div">
+    <p>Name -
+        <span class="col">{{profile.name}}</span>
+    </p>
+    <p>Email ID - <span class="col">{{profile.emailId}}</span></p>
+    <p>ID - <span class="col">{{profile.sid_tid}}</span></p>
+    <p>Role - <span class="col">{{profile.access}}</span></p>
+    <p>Courses Enrolled -</p>
+    <ol style="margin: 0%;">
+        <li *ngFor="let c of profile.courses">
+            <span class="col">{{c[1]}}</span>
+        </li>
+    </ol>
+    <button *ngIf="!isM" class="btn" (click)="uploadImage()">Upload Image</button><br>
+    <button *ngIf="!request" class="btn" (click)="changePassword()">Change Password</button>
+    <form *ngIf="request" class="w3-container">
+        <p class="">
+            <input required [(ngModel)]="password.old" class="w3-input" type="password" name="old">
+            <label>Old Password</label></p>
+
+        <p>
+            <input required [(ngModel)]="password.new" class="w3-input" type="password" name="new">
+            <label>New Password</label></p>
+
+        <p>
+            <input required [(ngModel)]="password.newConfirm" class="w3-input" type="password" name="new-confirm">
+            <label>Confirm New Password</label></p>
+        <button class="btnS" (click)="submit()" type="submit">Submit</button>
+    </form>
+    <p class="red" *ngIf="error">{{error}}</p>
+    <p class="green" *ngIf="success">{{success}}</p>
+
+</div>

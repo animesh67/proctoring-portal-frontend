@@ -1,0 +1,54 @@
+table {
+    width: 100%;
+}
+
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+.td,
+.th {
+    width: 25%;
+}
+
+.t {
+    font-weight: bold;
+    color: rgb(72, 140, 179);
+}
+
+button {
+    margin-right: 5%;
+}
+
+#customers {
+    width: fit-content;
+    margin-left: 5%;
+    margin-right: 5%;
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+}
+
+#customers td {
+    padding-left: 1%;
+}
+
+#customers th {
+    border: 1px solid black;
+}
+
+#customers tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#customers tr:hover {
+    background-color: #ddd;
+}
+
+#customers th {
+    padding: 0.5% 1% 0.5% 1%;
+    width: 1%;
+    text-align: left;
+    background-color: rgb(255, 221, 157);
+    color: black;
+}

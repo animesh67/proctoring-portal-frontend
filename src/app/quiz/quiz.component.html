@@ -1,0 +1,20 @@
+<p class="heading"><b>{{heading}}</b></p>
+<div class="flex center">
+    <mat-card class="example-card" *ngFor="let q of quiz;index as i">
+        <mat-card-header>
+            <mat-card-title class="head"><b>{{q.subject_name}}</b></mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <p class="con"> Date: <b>{{q.start_date}}</b></p>
+            <p class="con">Time: <b>{{q.time}}</b></p>
+            <p class="con"> Duration: <b>{{q.duration}} Mins</b></p>
+        </mat-card-content>
+        <mat-card-actions style="text-align: center; padding-bottom: 8px;">
+            <button *ngIf="heading==='Results' && teacher " mat-button class="btn" (click)="results(q)">Show Results</button>
+            <button *ngIf="future && student" mat-button class="btn" (click)="start(q)">Start Quiz</button>
+            <button *ngIf="past && student" mat-button class="btn" (click)="preview(q)">Preview Quiz</button>
+            <button *ngIf="future && teacher" mat-button class="btn" (click)="preview(q)">Preview Quiz</button>
+            <button *ngIf="teacher && future" style="border: solid; border-width: 1px; border-color: black;" mat-button (click)="del(q,i)">Delete</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

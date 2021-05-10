@@ -1,0 +1,49 @@
+.heading {
+    font-size: 35px;
+    color: rgb(255, 125, 38);
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.example-card {
+    /* background-color: rgb(255, 225, 225); */
+    margin: 1.5% 2% 1.5% 2%;
+    min-width: 260px;
+    max-width: 260px;
+    border-radius: 10%;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.head {
+    padding-bottom: 5px;
+    color: rgb(72, 140, 179);
+    font-size: 23px;
+}
+
+.con {
+    font-size: 18px;
+    font-family: 'Lucida Sans';
+}
+
+.btn {
+    font-size: 18px;
+    border: orange;
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 1px;
+}
+
+.btn:hover {
+    color: white;
+    background-color: orange;
+}
+
+.center {
+    text-align: center;
+}

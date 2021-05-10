@@ -1,0 +1,13 @@
+<div style="display:block; height: 65vh; width: 77vw;">
+    <div style="overflow-y: scroll; width:19%; float: left; border-right:1px solid black; height: 66vh; margin-right: 2%;">
+        <p style="color: rgb(72, 140, 179);"><b>Suspicious Timestamps</b></p>
+        <p *ngFor="let p of timestamps;index as i">
+            {{i+1}}. {{p}}<br>
+        </p>
+    </div>
+    <div style=" width: 79%; float: left; ">
+        <video id="videoPlayer" width="100%" controls muted="muted" autoplay>
+        <source src={{url}} type="video/mp4" />
+      </video>
+    </div>
+</div>

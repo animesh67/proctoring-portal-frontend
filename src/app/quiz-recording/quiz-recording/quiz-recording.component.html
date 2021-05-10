@@ -1,0 +1,10 @@
+
+<button *ngIf="!quizRecordingService.isMicWebCamEnabled" (click)="enableMicWebCamAccess()">Mic and WebCam access</button>
+<button (click)="startQuiz()">Start test</button>
+
+<div class="timer">
+    <h4>Timer </h4>
+    <span id="minutes"> {{mins}} </span>Min
+    <span id="seconds"> {{sec}} </span>S
+</div>
+

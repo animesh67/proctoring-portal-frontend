@@ -1,0 +1,80 @@
+<div>
+    <form style="text-align: center;">
+        <div class="dk">
+            <h1 class="center orange">Upload Quiz</h1>
+            <div style="color: black;" class="center">
+                <mat-form-field style="color: black;" class="smallWidth" appearance="fill">
+                    <mat-label>Select Subject Name</mat-label>
+                    <mat-select [(ngModel)]="quiz.subjectName" name="Subject">
+                        <mat-option *ngFor="let s of subjects" [value]="s">
+                            {{s}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <br>
+                <mat-form-field class="margin">
+                    <mat-label class="black">Duration in Mins</mat-label>
+                    <input class="black" [(ngModel)]="quiz.duration" name="duration" matInput type="number" min="5">
+                </mat-form-field>
+                <mat-form-field class="margin">
+                    <mat-label class="black">Start Date & Time</mat-label>
+                    <input class="black" [(ngModel)]="quiz.date" name="date" matInput type="datetime-local">
+                </mat-form-field>
+            </div>
+
+            <div class="m" *ngFor="let q of quiz.questions;index as i">
+                <p class="black left"><b>Q{{i+1}}</b></p>
+                <mat-expansion-panel hideToggle>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title class="i">
+                            {{quiz.questions[i].ques}}
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+
+                    <mat-form-field class="op">
+                        <mat-label class="q">Question</mat-label>
+                        <span class="i">
+                        <input type="text" [(ngModel)]="quiz.questions[i].ques" name="ques" matInput size="40">
+                    </span>
+                    </mat-form-field><br>
+                    <mat-form-field class="op">
+                        <mat-label class="q">Option1</mat-label>
+                        <input class="i" [(ngModel)]="quiz.questions[i].option1" name="op1" matInput type="text">
+                    </mat-form-field><br>
+                    <mat-form-field class="op">
+                        <mat-label class="q">Option2</mat-label>
+                        <input class="i" [(ngModel)]="quiz.questions[i].option2" name="op2" matInput type="text">
+                    </mat-form-field><br>
+                    <mat-form-field class="op">
+                        <mat-label class="q">Option3</mat-label>
+                        <input class="i" [(ngModel)]="quiz.questions[i].option3" name="op3" matInput type="text">
+                    </mat-form-field><br>
+                    <mat-form-field class="op">
+                        <mat-label class="q">Option 4</mat-label>
+                        <input class="i" [(ngModel)]="quiz.questions[i].option4" name="op4" matInput type="text">
+                    </mat-form-field><br>
+                    <mat-form-field class="op">
+                        <mat-label class="q">Correct Option</mat-label>
+                        <input class="i" [(ngModel)]="quiz.questions[i].correct" name="correct" min="1" max="4" matInput required type="number">
+                    </mat-form-field>
+                </mat-expansion-panel>
+                <div style="text-align: left;">
+                    <button style="color: black;" (click)="del(i)">delete</button>
+                </div>
+
+                <!-- <div style="position: fixed;">
+                    <button (click)="del(i)" class="padding" mat-mini-fab color="warn">
+                    <mat-icon>delete</mat-icon>
+                </button>
+                </div> -->
+            </div>
+            <div class="center padding">
+                <button class="add" (click)="addQues()" mat-button color="accent">Add Question</button><br><br>
+                <p style="color: red;" *ngIf="isSubmitted && isWrong">Form has some missing fields.</p>
+                <p style="color: green;" *ngIf="isSubmitted && !isWrong">Quiz Upload Successful</p>
+                <button class="add" (click)="quizUpload()" type="submit" mat-raised-button color="primary">Submit</button>
+            </div>
+        </div>
+
+    </form>
+</div>

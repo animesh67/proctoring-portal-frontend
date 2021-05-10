@@ -1,0 +1,56 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+<p class="boo">
+    <span style="color: orange; font-size: 37px;"> &#60;Online&#62; </span> Proctoring Portal
+</p>
+
+<div class="boundary">
+    <div class="login">
+        <div (click)="loginWithGoogle()" class="col s12 m6 offset-m3 center-align">
+            <a class="oauth-container btn darken-4 white black-text" style="text-transform:none">
+                <div class="left">
+                    <img width="20px" style="margin-top:7px; margin-right:8px" alt="Google sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+                </div>
+                Login with Google
+            </a>
+        </div>
+        <form [formGroup]="loginForm" class="login-container" (ngSubmit)="login()">
+            <p [ngClass]="{ 'has-error': isSubmitted && formControls.email.errors }">
+                <input label="email" type="email" placeholder="Email Id" formControlName="email" required />
+            </p>
+
+            <div *ngIf="isSubmitted && formControls.email.errors" class="help-block">
+                <div *ngIf="formControls.username.errors.required">
+                    Email Id is required
+                </div>
+            </div>
+
+            <p [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }">
+                <input label="password" type="password" placeholder="Password" formControlName="password" required />
+            </p>
+
+            <div *ngIf="isSubmitted && formControls.password.errors && type!='success'" class="help-block">
+                <div *ngIf="formControls.password.errors.required">
+                    Password is required
+                </div>
+            </div>
+            <div *ngIf="isSubmitted && formControls.password.errors && type!='success'" class="help-block">
+                <div *ngIf="formControls.password.errors.pswd">
+                    Password should have length>=8
+                </div>
+            </div>
+            <re-captcha formControlName="captcha" (resolved)="resolved($event)" (error)="onError($event)" errorMode="handled" siteKey="6LcjK80aAAAAAFZnPTXFGaAV9aXkruYLndXdtq8e"></re-captcha>
+            <p>
+                <input type="submit" (click)="login()" value="Log in">
+            </p>
+        </form>
+        <P>
+            <button (click)="forgot()"><p style="color: black;">Forgot Password</p></button>
+        </P>
+        <alert *ngIf="alertMessage && type==='success'">
+            <p style="color: green;">{{alertMessage}}</p>
+        </alert>
+        <alert *ngIf="alertMessage && type==='error'">
+            <p style="color: red;">{{alertMessage}}</p>
+        </alert>
+    </div>
+</div>
