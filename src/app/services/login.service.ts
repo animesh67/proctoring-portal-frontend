@@ -45,6 +45,9 @@ export class LoginService {
     }
 
     ifInLocal() {
+        if(!this.check()){
+            return;
+        }
         this.user = JSON.parse(localStorage.getItem("user"));
         this.isLoggedIn = true;
         console.log(this.user)

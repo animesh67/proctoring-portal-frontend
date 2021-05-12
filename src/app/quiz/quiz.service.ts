@@ -12,7 +12,7 @@ export class QuizService {
         list.forEach((el: any) => {
             el.start_date = moment(el.start_date).local().format("DD-MM-YYYY,HH:mm A")
             el.time = el.start_date.split(",")[1];
-            el.start_date = el.start_date.split(" ")[0];
+            el.start_date = el.start_date.split(",")[0];
         });
         return list;
     }

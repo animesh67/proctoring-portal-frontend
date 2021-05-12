@@ -18,8 +18,14 @@ import { AddTeacherComponent } from './add-teacher/add-teacher.component';
 import { WorksComponent } from './works/works.component';
 import { TakePhotoComponent } from './take-photo/take-photo.component';
 import { QuizResultsComponent } from './quiz-results/quiz-results.component';
-import { LiveProctoringComponent } from './live-proctoring-module/live-proctoring/live-proctoring.component';
-import { VideoPlayerComponent } from './video-player/video-player.component'
+import { VideoPlayerComponent } from './video-player/video-player.component';
+import { ProctoringComponent } from './proctoring/proctoring.component'
+import { SocketIoConfig, SocketIoModule } from "ngx-socket-io";
+import { RoomComponent } from './room/room.component';
+import { environment } from 'src/environments/environment';
+
+const config: SocketIoConfig = { url: environment.proctoring, options: { withCredentials: true } };
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,11 +40,13 @@ import { VideoPlayerComponent } from './video-player/video-player.component'
     WorksComponent,
     TakePhotoComponent,
     QuizResultsComponent,
-    LiveProctoringComponent,
     VideoPlayerComponent,
+    ProctoringComponent,
+    RoomComponent,
 
   ],
   imports: [
+    SocketIoModule.forRoot(config),
     MaterialModule,
     BsDatepickerModule.forRoot(),
     SocialLoginModule,

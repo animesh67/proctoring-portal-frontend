@@ -12,9 +12,10 @@ import { ShowQuizComponent } from './show-quiz/show-quiz.component';
 import { StudentsEnrolledComponent } from './students-enrolled/students-enrolled.component';
 import { TakePhotoComponent } from './take-photo/take-photo.component';
 import { WorksComponent } from './works/works.component';
-import {ImageGuardGuard} from "./image-guard.guard"
+import { ImageGuardGuard } from "./image-guard.guard"
 import { QuizResultsComponent } from './quiz-results/quiz-results.component';
-import { LiveProctoringComponent } from './live-proctoring-module/live-proctoring/live-proctoring.component';
+import { ProctoringComponent } from './proctoring/proctoring.component';
+import { RoomComponent } from './room/room.component';
 const routes: Routes = [
   {
     path: "",
@@ -30,12 +31,12 @@ const routes: Routes = [
     {
       path: "students",
       component: StudentsEnrolledComponent,
-      canActivate:[AuthGuardGuard]
+      canActivate: [AuthGuardGuard]
     },
     {
       path: "quiz-upload",
       component: QuizUploadComponent,
-      canActivate:[AuthGuardGuard]
+      canActivate: [AuthGuardGuard]
     },
     {
       path: "works",
@@ -48,39 +49,45 @@ const routes: Routes = [
     {
       path: "quiz/:details",
       component: QuizComponent,
-      canActivate:[AuthGuardGuard,ImageGuardGuard]
+      canActivate: [AuthGuardGuard, ImageGuardGuard]
     },
     {
       component: ProfileComponent,
       path: "profile",
-      canActivate:[AuthGuardGuard]
+      canActivate: [AuthGuardGuard]
     },
     {
       component: AddTeacherComponent,
       path: "add-teacher",
-      canActivate:[AuthGuardGuard]
-    }
+      canActivate: [AuthGuardGuard]
+    },
+    {
+      path: "proctoring",
+      component: ProctoringComponent,
+      canActivate: [AuthGuardGuard]
+    },
     ]
   },
   {
     path: "quiz-display",
     component: QuizRecordingComponent,
-    canActivate:[AuthGuardGuard]
+    canActivate: [AuthGuardGuard]
   },
   {
     path: "quizDisplay/:subject/:id",
     component: ShowQuizComponent,
-    canActivate:[AuthGuardGuard]
+    canActivate: [AuthGuardGuard]
   },
   {
     path: "quizResults/:subject/:id",
     component: QuizResultsComponent,
-    // canActivate:[AuthGuardGuard]
+    canActivate: [AuthGuardGuard]
   },
+
   {
-    path: "live-proctoring",
-    component: LiveProctoringComponent,
-    // canActivate:[AuthGuardGuard]
+    path: "proctoring/joinroom/:id",
+    component: RoomComponent,
+    canActivate: [AuthGuardGuard]
   },
 ];
 

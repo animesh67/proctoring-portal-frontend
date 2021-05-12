@@ -67,8 +67,7 @@
                     },
                     "configurations": {
                         "production": {
-                            "browserTarget": "vi-frontend:build:production",
-                            "proxyConfig": "proxy.conf.json"
+                            "browserTarget": "vi-frontend:build:production"
                         }
                     }
                 },

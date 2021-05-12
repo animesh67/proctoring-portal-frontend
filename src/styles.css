@@ -5,4 +5,6 @@ body {
     background-color: rgb(72, 140, 179);
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-image: radial-gradient(rgb(37, 124, 196), rgb(84, 154, 182));
+    background-image: linear-gradient(rgb(72, 140, 179));
 }

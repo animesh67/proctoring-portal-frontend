@@ -1,0 +1,42 @@
+<div style="text-align: center; width: 100%; overflow: hidden;">
+    <h1 class="heading">&#60;Manual&#62; <span style="color: white;">Proctoring</span></h1>
+    <div *ngIf="!isStudent">
+        <button class="gen" (click)="generate()">Generate UUIDV4</button>
+        <div *ngIf="id">
+            <p class="id">Your UUID is : <u style="color: orange;">{{id}}</u>
+                <br> Share this id with the students
+            </p>
+        </div>
+    </div>
+    <div *ngIf="isStudent">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <div style="text-align: center;">
+            <input [(ngModel)]="uuid" type="text" class="form__input" id="name" placeholder="Enter UUID" required="" />
+            <label for="name" class="form__label">Enter UUIDV4</label>
+        </div>
+    </div>
+    <div class="buttons">
+        <button (click)="join()" class="blob-btn">
+                  Join Meeting
+                  <span class="blob-btn__inner">
+                    <span class="blob-btn__blobs">
+                      <span class="blob-btn__blob"></span>
+                      <span class="blob-btn__blob"></span>
+                      <span class="blob-btn__blob"></span>
+                      <span class="blob-btn__blob"></span>
+                    </span>
+                  </span>
+                </button>
+        <br/>
+
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+                <defs>
+                  <filter id="goo">
+                    <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
+                    <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7" result="goo"></feColorMatrix>
+                    <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
+                  </filter>
+                </defs>
+              </svg>
+    </div>
+</div>

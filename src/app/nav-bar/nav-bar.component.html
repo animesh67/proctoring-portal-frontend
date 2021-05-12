@@ -26,7 +26,7 @@
             <a *ngIf="isTeacher || isAdmin " mat-list-item routerLink="/students" routerLinkActive="active ">
                 <p>Students Enrolled</p>
             </a>
-            <a *ngIf="isLogged && !isAdmin " mat-list-item routerLink="/live-proctoring" routerLinkActive="active ">
+            <a *ngIf="isLogged && !isAdmin " mat-list-item routerLink="/proctoring" routerLinkActive="active ">
                 <p>Live Proctoring</p>
             </a>
             <a *ngIf="true " mat-list-item routerLink="/works" routerLinkActive="active">

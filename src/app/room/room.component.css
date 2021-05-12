@@ -1,0 +1,14 @@
+.vid {
+    padding: 1.5px 1.5px 1.5px 1.5px;
+    min-width: 19%;
+    max-width: 19%;
+    max-height: 19%;
+    min-height: 19%;
+    float: left;
+}
+
+.v {
+    padding: 2% 2% 2% 2%;
+    justify-content: center;
+    align-items: center;
+}

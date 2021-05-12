@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css?family=Bangers&display=swap');
+.gen {
+    border: orange solid 3px;
+    background-color: white;
+    color: rgb(72, 140, 179);
+    font-weight: bold;
+    font-size: 22px;
+    height: 130px;
+    width: 130px;
+    border-radius: 50%;
+    margin-top: 2%;
+}
+
+.id {
+    margin-top: 2%;
+    color: white;
+    font-size: 22px;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+$openSans: 'Open Sans',
+Helvetica,
+Arial,
+sans-serif;
+body {
+    background: #333;
+    font-family: $openSans;
+}
+
+.buttons {
+    margin-top: 2%;
+    text-align: center;
+    border-radius: 30px;
+}
+
+$cyan: #0505A9;
+$dark: #FFFFFF;
+$borderW: 2px;
+.blob-btn {
+    $numOfBlobs: 4;
+    z-index: 1;
+    position: relative;
+    padding: 20px 46px;
+    margin-bottom: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    color: $cyan;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    transition: color 0.5s;
+    cursor: pointer;
+    border-radius: 30px;
+    &:before {
+        content: "";
+        z-index: 1;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border: $borderW solid $cyan;
+        border-radius: 30px;
+    }
+    &:after {
+        content: "";
+        z-index: -2;
+        position: absolute;
+        left: $borderW*1.5;
+        top: $borderW*1.5;
+        width: 100%;
+        height: 100%;
+        transition: all 0.3s 0.2s;
+        border-radius: 30px;
+    }
+    &:hover {
+        color: $dark;
+        border-radius: 30px;
+        &:after {
+            transition: all 0.3s;
+            left: 0;
+            top: 0;
+            border-radius: 30px;
+        }
+    }
+    &__inner {
+        z-index: -1;
+        overflow: hidden;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 30px;
+        background: #ffffff;
+    }
+    // additional container created, because in FF blobs are breaking overflow:hidden of element with svg gooey filter
+    &__blobs {
+        position: relative;
+        display: block;
+        height: 100%;
+        filter: url('#goo');
+    }
+    &__blob {
+        position: absolute;
+        top: $borderW;
+        width: 100% / $numOfBlobs;
+        height: 100%;
+        background: $cyan;
+        border-radius: 100%;
+        transform: translate3d(0, 150%, 0) scale(1.7);
+        transition: transform 0.45s;
+        @supports(filter: url('#goo')) {
+            transform: translate3d(0, 150%, 0) scale(1.4);
+        }
+        @for $i from 1 through $numOfBlobs {
+            &:nth-child(#{$i}) {
+                left: ($i - 1) * (120% / $numOfBlobs);
+                transition-delay: ($i - 1) * 0.08s;
+            }
+        }
+        .blob-btn:hover & {
+            transform: translateZ(0) scale(1.7);
+            @supports(filter: url('#goo')) {
+                transform: translateZ(0) scale(1.4);
+            }
+        }
+    }
+}
+
+.heading {
+    margin-top: 3%;
+    font-size: 3em;
+    font-weight: normal;
+    color: orange;
+}
+
+button+button {
+    margin-left: calc(var(--size-bezel) * 2);
+}
+
+.icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin-right: .5em;
+}
+
+.hidden {
+    display: none;
+}
+
+.form__label {
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    margin-top: 0.5% auto;
+    display: block;
+    transition: all 0.3s;
+    transform: translateY(0rem);
+}
+
+.form__input {
+    width: 50%;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    font-size: 17px;
+    margin: 30px auto;
+    padding: 1.5rem 2rem;
+    border-radius: 0.2rem;
+    background-color: rgb(255, 255, 255);
+    border: none;
+    display: block;
+    border-bottom: 0.3rem solid transparent;
+    transition: all 0.3s;
+}
+
+.form__input:placeholder-shown+.form__label {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transform: translateY(-4rem);
+    transform: translateY(-4rem);
+}
