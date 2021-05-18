@@ -14,7 +14,7 @@ export class ImageGuardGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    if (this.loginService.user.isImage === false && this.loginService.user.access === "student") {
+    if (this.loginService.user.isImage === false && this.loginService.user.access === "student" && this.loginService.imaa===false) {
       this.dialog.display("Info", "Upload you image in profile tab, else you wont be able to take a quiz");
       return false;
     }

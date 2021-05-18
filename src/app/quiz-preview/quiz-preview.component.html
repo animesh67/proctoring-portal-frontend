@@ -1,0 +1,25 @@
+<div *ngIf="!src" class="bk">
+    <p class="oo q">{{questions.subject}} Quiz</p>
+
+    <div class="form">
+        <div *ngFor="let q of questions.ques">
+            <div class="q">
+                <p class="ques">{{q.q}}</p>
+                <div>
+                    <mat-radio-group class="example-radio-group" [(ngModel)]="q.ans">
+                        <mat-radio-button class="example-radio-button" *ngFor="let o of q.o" [value]="o">
+                            {{o}}
+                        </mat-radio-button>
+                    </mat-radio-group>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: left; margin-left: 10.5%; margin-top: 1%;">
+            <input class="button" type="submit" value="Submit">
+        </div>
+
+    </div>
+</div>
+<div class="src" *ngIf="src">
+    <img src="{{src.img}}">
+</div>

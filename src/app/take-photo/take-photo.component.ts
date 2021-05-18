@@ -60,7 +60,7 @@ export class TakePhotoComponent implements OnInit {
 
   public capture() {
     this.video.nativeElement.pause();
-    let context = this.canvas.nativeElement.getContext("2d").drawImage(this.video.nativeElement, 50, 70,500 ,390,0,0,500,390);
+    let context = this.canvas.nativeElement.getContext("2d").drawImage(this.video.nativeElement, 0, 0,640 ,480);
     context=this.canvas.nativeElement.toDataURL("image/png");
     this.image=context;
     this.s=false
@@ -70,6 +70,8 @@ export class TakePhotoComponent implements OnInit {
    if(res.status===200){
     this.dialog.display("Success","Image Upload Successful");
     this.loginService.user.isImage=true;
+    this.loginService.saveSession();
+    this.loginService.imaa=true;
     this.router.navigate(["/profile"])
    }
    else{

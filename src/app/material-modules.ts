@@ -25,7 +25,7 @@ import {MatSortModule} from "@angular/material/sort"
 import {FileUploadModule}  from "ng2-file-upload";
 import {RecaptchaFormsModule, RecaptchaModule} from "ng-recaptcha";
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-import {MatPaginatorModule} from "@angular/material/paginator"
+import {MatPaginatorModule} from "@angular/material/paginator";
 
 
 const modules = [

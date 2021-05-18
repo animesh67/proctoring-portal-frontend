@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 import "./helper"
 import Peer from 'peerjs';
 
@@ -10,8 +10,7 @@ export class PeerService {
 
   constructor() {
     this.peer = new Peer(undefined, {
-      host: 'localhost',
-      port: 3001
+     
     });
   }
 }

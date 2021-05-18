@@ -2,6 +2,57 @@
     <span>Add Students, Teachers, admins</span>
 </div>
 <br>
+<div style="text-align: center;">
+    <button style="color: black; margin-bottom: 1%; margin-right: 2%;" (click)=openModal(templatenew)>Register User</button>
+    <button style="color: black; margin-bottom: 1%; margin-right: 2%;" (click)=openMo(courses)>Register Course</button>
+
+</div>
+<ng-template #templatenew>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Add User</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div #data class="modal-body">
+        <label for="fname">Name</label>
+        <input [(ngModel)]="user.name" type="text" id="fname" name="firstname" placeholder="name..">
+        <label for="email">Email</label>
+        <input [(ngModel)]="user.email" type="text" id="email" name="email" placeholder="email..">
+        <label for="id">ID</label>
+        <input [(ngModel)]="user.sid_tid" type="text" id="id" name="id" placeholder="ID..">
+        <label for="access">Access</label>
+        <select [(ngModel)]="user.access" id="access" name="access">
+              <option value="student">student</option>
+              <option value="teacher">teacher</option>
+              <option value="admin">admin</option>
+        </select>
+        <label for="courses">Courses</label>
+        <input [(ngModel)]="user.courses" type="text" id="courses" name="courses" placeholder="Comma Separated course IDs">
+
+        <input type="submit" (click)="addUser(); modalRef.hide() " value="Submit">
+
+
+    </div>
+</ng-template>
+
+<ng-template #courses>
+    <p>{{course.name}}</p>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Add Course</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="courseRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div #co class="modal-body">
+        <label for="name">Name</label>
+        <input [(ngModel)]="course.course_name" type="text" id="name" name="name" placeholder="name..">
+        <label for="id">Course Id</label>
+        <input [(ngModel)]="course.courseId" type="text" id="id" name="id" placeholder="courseId..">
+        <input type="submit" (click)="addCourse(); courseRef.hide() " value="Submit">
+    </div>
+</ng-template>
+
 <p style="margin-left:5% ; margin-right: 5%; font-size: 14px;">Upload a csv file with following columns - name, email, role(student, teacher, admin), sid/tid, courses (comma separated sting of all the courseId of the courses enroleed / teaching)</p>
 
 <div class="container mar">

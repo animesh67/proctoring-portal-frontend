@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ProfileService } from './profile.service';
 import { LoginService } from '../services/login.service';
 import {Router} from '@angular/router'
+import { HttpClient } from '@angular/common/http';
+import { enums } from '../enums/enums';
 
 @Component({
   selector: 'app-profile',
@@ -9,7 +11,7 @@ import {Router} from '@angular/router'
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  isM=this.loginService.user.isImage;
+  isM=this.loginService.imaa;
   profile: any = null;
   request = false;
   password = {
@@ -19,14 +21,17 @@ export class ProfileComponent implements OnInit {
   }
   success = "";
   error = "";
+  imgPath="";
   constructor(
+    private http:HttpClient,
     private profileService: ProfileService,
     private loginService: LoginService,
     private router:Router
 
   ) { }
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
+    this.imgPath=await this.http.get(enums.getImg).toPromise().then((data:any)=>data.img).catch();
     this.profile = Object.assign({}, this.loginService.user);
     this.profile.courses = Object.entries(this.profile.courses);
   }
@@ -57,5 +62,6 @@ export class ProfileComponent implements OnInit {
   uploadImage(){
     this.router.navigate(["/take-photo"])
   }
+
 
 }

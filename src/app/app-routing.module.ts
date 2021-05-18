@@ -45,6 +45,7 @@ const routes: Routes = [
     {
       path: "take-photo",
       component: TakePhotoComponent,
+      canActivate: [AuthGuardGuard]
     },
     {
       path: "quiz/:details",
@@ -85,9 +86,9 @@ const routes: Routes = [
   },
 
   {
-    path: "proctoring/joinroom/:id",
+    path: "proctoring/:room/:id",
     component: RoomComponent,
-    canActivate: [AuthGuardGuard]
+    // canActivate: [AuthGuardGuard]
   },
 ];
 

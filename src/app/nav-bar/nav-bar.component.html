@@ -5,8 +5,8 @@
             <a *ngIf="!isLogged" mat-list-item routerLink="/login " routerLinkActive="active ">
                 <p>Login</p>
             </a>
-            <a *ngIf="isAdmin " mat-list-item routerLink="/add-teacher" routerLinkActive="active ">
-                <p>Add Users</p>
+            <a *ngIf="isAdmin || isTeacher " mat-list-item routerLink="/add-teacher" routerLinkActive="active ">
+                <p>Registration</p>
             </a>
             <a *ngIf="isLogged " mat-list-item routerLink="/profile" routerLinkActive="active ">
                 <p>Profile</p>

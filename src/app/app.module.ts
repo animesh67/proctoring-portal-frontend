@@ -23,6 +23,8 @@ import { ProctoringComponent } from './proctoring/proctoring.component'
 import { SocketIoConfig, SocketIoModule } from "ngx-socket-io";
 import { RoomComponent } from './room/room.component';
 import { environment } from 'src/environments/environment';
+import {ModalModule} from "ngx-bootstrap/modal";
+import { QuizPreviewComponent } from './quiz-preview/quiz-preview.component'
 
 const config: SocketIoConfig = { url: environment.proctoring, options: { withCredentials: true } };
 
@@ -43,9 +45,11 @@ const config: SocketIoConfig = { url: environment.proctoring, options: { withCre
     VideoPlayerComponent,
     ProctoringComponent,
     RoomComponent,
+    QuizPreviewComponent,
 
   ],
   imports: [
+    ModalModule.forRoot(),
     SocketIoModule.forRoot(config),
     MaterialModule,
     BsDatepickerModule.forRoot(),

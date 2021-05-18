@@ -18,11 +18,15 @@ interface USER {
     providedIn: 'root'
 })
 export class LoginService {
+    imaa=false;
+    saveSession(){
+        sessionStorage.setItem("user",JSON.stringify(this.user))
+    }
     logOut() {
         this.isLoggedIn = false;
         this.updateStatus("none");
-        localStorage.removeItem("user")
-        localStorage.removeItem("jwtToken")
+        sessionStorage.removeItem("user")
+        sessionStorage.removeItem("jwtToken")
         this.updateStatus("none");
     }
     user: USER = { token: "", name: "", emailId: "", sid_tid: "", access: "", courses: {}, isImage: false };
@@ -48,7 +52,7 @@ export class LoginService {
         if(!this.check()){
             return;
         }
-        this.user = JSON.parse(localStorage.getItem("user"));
+        this.user = JSON.parse(sessionStorage.getItem("user"));
         this.isLoggedIn = true;
         console.log(this.user)
         this.updateStatus(this.user.access);
@@ -68,11 +72,11 @@ export class LoginService {
         }
     }
     saveJwt = (jwt: string) => {
-        localStorage.setItem("jwtToken",jwt)
-        localStorage.setItem("user", JSON.stringify(this.user));
+        sessionStorage.setItem("jwtToken",jwt)
+        sessionStorage.setItem("user", JSON.stringify(this.user));
     }
     check = () => {
-        return localStorage.getItem("jwtToken")
+        return sessionStorage.getItem("jwtToken")
     }
 
     constructor(private http: HttpClient) { }

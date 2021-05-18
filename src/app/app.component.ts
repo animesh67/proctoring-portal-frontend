@@ -12,17 +12,21 @@ export class AppComponent {
 
   ngOnInit() {
   }
+  
+
+
 
   constructor(@Inject(DOCUMENT) private document: Document,
     public info: InfoDialog,
     private spinner: NgxSpinnerService,
     private loginService: LoginService) {
-
+    
     // window.addEventListener('blur', () => {
     //   info.display("Tab Switched", "Switching tab one more time will lead to auto submission")
     // });
 
   }
   title = 'vi-frontend';
+
 
 }

@@ -11,6 +11,10 @@ export const enums = {
     students: `${environment.server}/get-students-list`,
     forgot:`${environment.server}/forgot-password`,
     postImage:`${environment.server}/post-image`,
-    quizResult:`${environment.server}/results`
-
+    quizResult:`${environment.server}/results`,
+    addUser:`${environment.server}/addUser`,
+    addCourse:`${environment.server}/addCourse`,
+    getImg:`${environment.server}/getImg`,
+    quizPreview:`${environment.server}/quizPreview`,
+    postuuid:`${environment.server}/liveProctoring`
 }
