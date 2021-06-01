@@ -2,6 +2,7 @@
     <form style="text-align: center;">
         <div class="dk">
             <h1 class="center orange">Upload Quiz</h1>
+            <hr style="color: black; height: 30px; ">
             <div style="color: black;" class="center">
                 <mat-form-field style="color: black;" class="smallWidth" appearance="fill">
                     <mat-label>Select Subject Name</mat-label>
@@ -21,6 +22,8 @@
                     <input class="black" [(ngModel)]="quiz.date" name="date" matInput type="datetime-local">
                 </mat-form-field>
             </div>
+
+            <input style=" width: 80%; margin-bottom: 1%; margin-top: 1%; color: black;" type="text" [(ngModel)]="quiz.googleForm" name="link" placeholder="google form link">
 
             <div class="m" *ngFor="let q of quiz.questions;index as i">
                 <p class="black left"><b>Q{{i+1}}</b></p>
@@ -72,7 +75,7 @@
                 <button class="add" (click)="addQues()" mat-button color="accent">Add Question</button><br><br>
                 <p style="color: red;" *ngIf="isSubmitted && isWrong">Form has some missing fields.</p>
                 <p style="color: green;" *ngIf="isSubmitted && !isWrong">Quiz Upload Successful</p>
-                <button class="add" (click)="quizUpload()" type="submit" mat-raised-button color="primary">Submit</button>
+                <button class="add" (click)="quizUpload()" type="submit" mat-raised-button color="primary">Upload Quiz</button>
             </div>
         </div>
 

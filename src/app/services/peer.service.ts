@@ -10,7 +10,9 @@ export class PeerService {
 
   constructor() {
     this.peer = new Peer(undefined, {
-     
+      secure:true,
+     host:"peer-js-virtual-invigilation.herokuapp.com",
+     port:443,
     });
   }
 }

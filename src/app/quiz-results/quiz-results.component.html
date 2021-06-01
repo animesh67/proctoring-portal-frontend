@@ -10,12 +10,12 @@
         <th>No. of Questions</th>
     </tr>
     <tr>
-        <td>{{info.high}}</td>
-        <td>{{info.low}}</td>
-        <td>{{info.avg}}</td>
+        <td>{{info.max}}</td>
+        <td>{{info.min}}</td>
+        <td>{{info.mean}}</td>
         <td>{{info.std}}</td>
-        <td>{{info.ap}}</td>
-        <td>{{info.no}}</td>
+        <td>{{info.userAppeared}}</td>
+        <td>{{info.noOfQues}}</td>
     </tr>
 </table>
 <div style="text-align: center;">
@@ -37,11 +37,11 @@
             </ng-container>
             <ng-container matColumnDef="id">
                 <th class="th t" mat-header-cell *matHeaderCellDef mat-sort-header>SID</th>
-                <td class="td" mat-cell *matCellDef="let element"> {{element.id}} </td>
+                <td class="td" mat-cell *matCellDef="let element"> {{element.sid}} </td>
             </ng-container>
             <ng-container matColumnDef="marks">
                 <th class="th t" mat-header-cell *matHeaderCellDef mat-sort-header>Score</th>
-                <td class="td" mat-cell *matCellDef="let element"> {{element.marks}} </td>
+                <td class="td" mat-cell *matCellDef="let element"> {{element.score}} </td>
             </ng-container>
 
             <ng-container matColumnDef="actions">

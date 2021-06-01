@@ -18,7 +18,4 @@ export class QuizService {
     }
 
     constructor(private http: HttpClient) { }
-
-
-
 }

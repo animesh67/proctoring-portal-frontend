@@ -10,6 +10,10 @@ import { enums } from "../enums/enums"
     providedIn: 'root'
 })
 export class StudentService {
+    async delPic(e: any) {
+        let img = await this.http.delete(enums.getImg,{params:{id:e.id}}).toPromise().then(data=>data).catch(err=>"null");
+        return img
+    }
     async getimg(e: any) {
       let img = await this.http.get(enums.getImg,{params:{id:e.id}}).toPromise().then(data=>data).catch(err=>"null");
       return img

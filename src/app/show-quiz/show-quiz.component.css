@@ -1,66 +1,99 @@
-.form {
-    text-align: center;
-}
-
-.q {
-    margin-left: 18%;
-    margin-right: 18%;
-    background-color: white;
-    border-radius: 15px;
-    border-left-style: solid;
-    border-color: rgb(212, 138, 0);
-    border-width: 7px;
-}
-
-.ques {
-    padding-left: 2.5%;
-    padding-top: 2%;
-    padding-bottom: 0%;
-    text-align: left;
-    font-size: 18px;
-}
-
-.example-radio-group {
-    display: flex;
-    flex-direction: column;
-    margin: 15px 0;
-    padding-bottom: 2%;
-}
-
-.example-radio-button {
-    padding-left: 2.5%;
-    padding-bottom: 1.5%;
-    padding-top: 0.7%;
-    font-size: 15px;
-}
-
-.op {
-    word-wrap: break-word;
-}
-
-.button {
-    background-color: rgb(212, 138, 0);
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    border-radius: 8px;
-    border: none;
-}
-
-.button:hover {
-    cursor: pointer;
-    color: rgb(212, 138, 0);
-    background-color: white;
-}
-
-.oo {
-    border-top-style: solid;
-    border-left-style: none;
-    padding-top: 15px;
-    font-size: 35px;
-    padding-bottom: 15px;
-    padding-left: 1.5%;
-}
+    .form {
+        text-align: center;
+    }
+    
+    .q {
+        margin-left: 18%;
+        margin-right: 18%;
+        background-color: white;
+        border-radius: 15px;
+        border-left-style: solid;
+        border-color: rgb(212, 138, 0);
+        border-width: 7px;
+    }
+    
+    .ques {
+        padding-left: 2.5%;
+        padding-top: 2%;
+        padding-bottom: 0%;
+        text-align: left;
+        font-size: 18px;
+    }
+    
+    .example-radio-group {
+        display: flex;
+        flex-direction: column;
+        margin: 15px 0;
+        padding-bottom: 2%;
+    }
+    
+    .example-radio-button {
+        padding-left: 2.5%;
+        padding-bottom: 1.5%;
+        padding-top: 0.7%;
+        font-size: 15px;
+    }
+    
+    .op {
+        word-wrap: break-word;
+    }
+    
+    .button {
+        background-color: rgb(212, 138, 0);
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 8px;
+        border: none;
+    }
+    
+    .button:hover {
+        cursor: pointer;
+        color: rgb(212, 138, 0);
+        background-color: white;
+    }
+    
+    .oo {
+        border-top-style: solid;
+        border-left-style: none;
+        padding-top: 15px;
+        font-size: 35px;
+        padding-bottom: 15px;
+        padding-left: 1.5%;
+    }
+    
+    #countdown-container {
+        margin-left: 1%;
+        display: inline-block;
+        /*displays divs on a line*/
+        width: 200px;
+        /*gives the div element a width of 300px*/
+        margin: 5px 0;
+        /*gives 20px space at the top and bottom of the div element*/
+        border-radius: 5px;
+        /*curves the edges of the div element by 5px;*/
+        background: #1d81af;
+        /*gives the div element a background color*/
+    }
+    
+    #countdown {
+        font-family: "Fira Sans", sans-serif;
+        /*changes the text font in the divelement */
+        display: inline-block;
+        /*displays divs on a line*/
+        padding: 10px;
+        /*creates 30px space between the content of the div element and the walls of the div element*/
+        background: #1d81af;
+        color: white;
+        /*changes the text color in the div element*/
+    }
+    
+    #countdown span {
+        font-weight: bold;
+        /*boldens text in the span element*/
+        font-size: 30px;
+        /*changes the text size in the span element*/
+    }

@@ -11,7 +11,7 @@ import { enums } from '../enums/enums';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  isM=this.loginService.imaa;
+  isM=this.loginService.user.isImage;
   profile: any = null;
   request = false;
   password = {

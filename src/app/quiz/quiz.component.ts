@@ -32,7 +32,8 @@ export class QuizComponent implements OnInit {
     private loginService: LoginService,
     private spinner: NgxSpinnerService,
     private http: HttpClient,
-    private quizPreview:QuizPreviewService
+    private quizPreview:QuizPreviewService,
+    private info:InfoDialog
   ) { }
 
   async ngOnInit(): Promise<void> {
@@ -79,7 +80,13 @@ export class QuizComponent implements OnInit {
     this.spinner.hide()
   }
 
-  results = (i) => {
+  results = async (i) => {
+    let res:any=await this.http.get(enums.getResultStatus,{params:{id:i.id}}).toPromise();
+    console.log(res)
+    if(res.status===400){
+      this.info.display("Results Not compiled Yet","Results evaluation is under progress, press this button only once");
+      return;
+    }
     this.router.navigate(["quizResults", `${i.subject_name}`, `${i.id}`]);
   }
   async preview(i) {

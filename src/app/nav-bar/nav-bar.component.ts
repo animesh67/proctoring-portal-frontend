@@ -30,8 +30,8 @@ export class NavBarComponent implements OnInit {
   }
 
   logOut = (): void => {
-    this.loginService.logOut();
     this.router.navigate(['login'])
+    this.loginService.logOut();
   };
 
   ngOnInit(): void {

@@ -53,6 +53,9 @@ export class StudentsEnrolledComponent implements OnInit {
     let pic = await this.service.getimg(e);
     this.quzPr.display("dds", pic);
   }
+  async delPhoto(e){
+    let pic=await this.service.delPic(e);
+  }
 
 
 }

@@ -18,7 +18,20 @@ export class QuizPreviewComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.src)
+    console.log(this.questions.ques[0].option1)
+    for(let i in this.questions.ques){
+      let c= this.questions.ques[i]
+      this.questions.ques[i].o=[
+        this.questions.ques[i].option1,
+        this.questions.ques[i].option2,
+        this.questions.ques[i].option3,
+        this.questions.ques[i].option4];
+        if(typeof c.correct === "number")
+        c.correct=this.questions.ques[i].o[c.correct-1]
+
+    }
+    
+   
   }
 
   onConfirm(): void {

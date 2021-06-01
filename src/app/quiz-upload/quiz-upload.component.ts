@@ -19,8 +19,9 @@ interface Quiz {
 export class QuizUploadComponent implements OnInit {
   subjects: string[] = [];
   quiz:
-    { subjectName: string, questions: Array<any>, duration: number, date: any }
+  any
     = {
+      googleForm:"",
       subjectName: "",
       questions: [],
       duration: 0,
@@ -45,10 +46,14 @@ export class QuizUploadComponent implements OnInit {
       return;
     }
     this.isWrong = false;
+    if(this.quiz.googleform!==""){
+      this.quiz.type="googleForm"
+    }
     console.log(this.quiz);
     const res = await this.quizUploadS.upload(this.quiz);
 
   }
+
   addQues = () => {
     this.quiz.questions.push({
       ques: "",

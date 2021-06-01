@@ -89,7 +89,6 @@ export class RoomComponent implements OnInit {
         video: true
       }).then(stream => {
         this.currentStream = stream;
-
       }).catch(() => {
         this.info.display("Error", "Camera Permissions not Given");
         console.log('*** ERROR *** Not permissions');
